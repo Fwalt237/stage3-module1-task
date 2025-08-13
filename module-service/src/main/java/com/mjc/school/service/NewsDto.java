@@ -1,7 +1,7 @@
 package com.mjc.school.service;
 
-import com.mjc.school.repository.impl.Error;
-import com.mjc.school.repository.impl.IdGenerator;
+import com.mjc.school.repository.implementation.Error;
+import com.mjc.school.repository.implementation.IdGenerator;
 import lombok.Data;
 
 import java.time.LocalDateTime;

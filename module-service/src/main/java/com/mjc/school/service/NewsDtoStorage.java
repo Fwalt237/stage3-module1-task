@@ -1,7 +1,7 @@
 package com.mjc.school.service;
 
-import com.mjc.school.repository.impl.Error;
-import com.mjc.school.repository.impl.NewsStorage;
+import com.mjc.school.repository.implementation.Error;
+import com.mjc.school.repository.implementation.NewsStorage;
 import lombok.Getter;
 
 import java.time.LocalDateTime;

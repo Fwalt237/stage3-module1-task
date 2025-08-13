@@ -1,4 +1,4 @@
-package com.mjc.school.repository.impl;
+package com.mjc.school.repository.implementation;
 
 public class IdGenerator {
     private static Long newsNextId = 1L;
