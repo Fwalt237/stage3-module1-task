@@ -1,5 +1,6 @@
-/.idea/
-/test-output/
-/build/
-/.idea/
-/.gradle/
+
+.idea/
+.gradle/
+**/build/
+test-output/
+

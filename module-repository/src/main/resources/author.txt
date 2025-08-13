@@ -1,0 +1,20 @@
+Rossum
+Gosling
+BrendanEich
+Ritchie
+Stroustrup
+Hejlsberg
+Lerdorf
+Lattner
+Griesemer
+Matsumoto
+JetBrains
+Graydon
+Microsoft
+Martin Odersky
+RossIhaka
+Lars Bak
+Larry Wall
+Cleve Moler
+Brad Cox
+D.Chamberlin

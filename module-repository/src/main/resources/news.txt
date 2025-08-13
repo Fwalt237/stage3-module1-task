@@ -1,0 +1,20 @@
+Python;A high-level programming language known for its readability and versatility.;1991-02-20T00:00:01;2023-10-05T00:00:01;Rossum
+Javalanguage;A class-based, object-oriented programming language designed to have as few implementation dependencies as possible.;1995-05-23T00:00:01;2023-09-19T00:00:01;Gosling
+JavaScript;A scripting language that enables you to create dynamically updating content, control multimedia, animate images, and pretty much everything else.;1995-12-04T00:00:01;2023-06-01T00:00:01;BrendanEich
+Clanguage;A general-purpose programming language that is extremely popular, simple, and flexible.;1972-01-01T00:00:01;2018-06-01T00:00:01;Ritchie
+C++language;An extension of the C programming language with added features like object-oriented programming.;1985-01-01T00:00:01;2020-12-01T00:00:01;Stroustrup
+C#language;A modern, object-oriented programming language developed by Microsoft.;2000-01-01T00:00:01;2022-11-08T00:00:01;Hejlsberg
+PHPlanguage;A popular general-purpose scripting language that is especially suited to web development.;1994-01-01T00:00:01;2023-11-23T00:00:01;Lerdorf
+Swift;A powerful and intuitive programming language for macOS, iOS, watchOS, and tvOS.;2014-06-02T00:00:01;2023-09-20T00:00:01;Lattner
+Golanguage;A statically typed, compiled programming language designed at Google.;2009-11-10T00:00:01;2023-08-08T00:00:01;Griesemer
+Rubylanguage;A dynamic, open-source programming language with a focus on simplicity and productivity.;1995-12-21T00:00:01;2023-12-25T00:00:01;Matsumoto
+Kotlin;A statically typed programming language that runs on the Java Virtual Machine and also can be compiled to JavaScript source code.;2011-07-20T00:00:01;2023-11-16T00:00:01;JetBrains
+Rustlanguage;A multi-paradigm, general-purpose programming language designed for performance and safety, especially safe concurrency.;2010-07-07T00:00:01;2023-12-28T00:00:01;Graydon
+TypeScript;A typed superset of JavaScript that compiles to plain JavaScript.;2012-10-01T00:00:01;2024-02-20T00:00:01;Microsoft
+Scala;A general-purpose programming language providing support for functional programming and a strong static type system.;2004-01-20T00:00:01;2023-05-16T00:00:01;Martin Odersky
+Rlanguage;A language and environment for statistical computing and graphics.;1993-08-01T00:00:01;2023-10-31T00:00:01;RossIhaka
+Dartlanguage;A general-purpose programming language originally developed by Google and later approved as a standard by Ecma.;2013-11-14T00:00:01;2023-11-09T00:00:01;Lars Bak
+Perllanguage;A family of high-level, general-purpose, interpreted, dynamic programming languages.;1987-12-18T00:00:01;2023-10-03T00:00:01;Larry Wall
+MATLAB;A high-level language and interactive environment for numerical computation, visualization, and programming.;1984-02-01T00:00:01;2023-09-20T00:00:01;Cleve Moler
+Objective-C;A general-purpose, object-oriented programming language that adds Smalltalk-style messaging to the C programming language.;1984-10-01T00:00:01;2023-09-12T00:00:01;Brad Cox
+SQLlanguage;A domain-specific language used in programming and designed for managing data held in a relational database management system.;1974-01-01T00:00:01;2023-07-18T00:00:01;D.Chamberlin
