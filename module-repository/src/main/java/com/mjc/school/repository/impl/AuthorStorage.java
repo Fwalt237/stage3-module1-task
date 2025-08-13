@@ -1,4 +1,4 @@
-package com.mjc.school.repository;
+package com.mjc.school.repository.impl;
 
 import java.io.IOException;
 import java.io.InputStream;

@@ -1,4 +1,4 @@
-package com.mjc.school.repository;
+package com.mjc.school.repository.impl;
 
 public class Error {
     private static Long errorCode = 1L;
