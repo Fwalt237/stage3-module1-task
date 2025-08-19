@@ -4,7 +4,7 @@ import org.junit.jupiter.api.*;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
-public class ServiceLayerTest {
+class ServiceLayerTest {
 
     private NewsDtoStorage newsDtoStorage;
 

@@ -1,7 +1,7 @@
 package com.mjc.school.service;
 
 import com.mjc.school.repository.implementation.Error;
-import com.mjc.school.repository.implementation.NewsStorage;
+import com.mjc.school.repository.implementation.DataSource;
 import lombok.Getter;
 
 import java.time.LocalDateTime;
@@ -14,8 +14,8 @@ public class NewsDtoStorage {
     NewsMapper mapper = NewsMapper.INSTANCE;
 
     public NewsDtoStorage(){
-        NewsStorage newsStorage = new NewsStorage();
-        newsDtoStore = mapper.toDtoList(newsStorage.getAllNews());
+        DataSource dataSource = new DataSource();
+        newsDtoStore = mapper.toDtoList(dataSource.readAllNews());
     }
 
     public void printAllNewsDto() {
