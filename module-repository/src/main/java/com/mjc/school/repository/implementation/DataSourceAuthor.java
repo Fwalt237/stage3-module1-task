@@ -4,14 +4,14 @@ package com.mjc.school.repository.implementation;
 import lombok.Data;
 
 @Data
-public class Author {
+public class DataSourceAuthor {
     private static Long authorNextId = 1L;
     private Long id;
     private String name;
 
-    public Author(String name) {
-        if(Error.isAuthorLengthCorrect(name)) return;
-        this.id = IdGenerator.getAuthorGeneratedId();
+    public DataSourceAuthor(String name) {
+        if(DataSourceError.isAuthorLengthCorrect(name)) return;
+        this.id = DataSourceIdGenerator.getAuthorGeneratedId();
         this.name = name;
     }
 }

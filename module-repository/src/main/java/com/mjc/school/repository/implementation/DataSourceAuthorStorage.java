@@ -6,11 +6,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class AuthorStorage {
-    private List<Author> authors;
+public class DataSourceAuthorStorage {
+    private List<DataSourceAuthor> dataSourceAuthors;
 
-    public AuthorStorage() {
-        this.authors = new ArrayList<>();
+    public DataSourceAuthorStorage() {
+        this.dataSourceAuthors = new ArrayList<>();
 
         try (InputStream inputStream = getClass().getClassLoader().getResourceAsStream("author.txt")) {
             if (inputStream == null) {
@@ -18,7 +18,7 @@ public class AuthorStorage {
             }
             Scanner scanner = new Scanner(inputStream);
             while (scanner.hasNextLine()) {
-                this.authors.add(new Author(scanner.nextLine().trim()));
+                this.dataSourceAuthors.add(new DataSourceAuthor(scanner.nextLine().trim()));
             }
         } catch (IOException e) {
             throw new RuntimeException("Failed to load author.txt from resources", e);
@@ -26,9 +26,9 @@ public class AuthorStorage {
     }
 
     public Long getIdByAuthorName(String authorName) {
-        if (authors == null) return null;
-        for (Author author : authors) {
-            if (author.getName().equals(authorName)) return author.getId();
+        if (dataSourceAuthors == null) return null;
+        for (DataSourceAuthor dataSourceAuthor : dataSourceAuthors) {
+            if (dataSourceAuthor.getName().equals(authorName)) return dataSourceAuthor.getId();
         }
         return null;
     }

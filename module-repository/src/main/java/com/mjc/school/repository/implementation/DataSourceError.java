@@ -1,6 +1,6 @@
 package com.mjc.school.repository.implementation;
 
-public class Error {
+public class DataSourceError {
     private static Long errorCode = 1L;
 
     public static boolean isNewsAttributesCorrect(String title, String content) {
