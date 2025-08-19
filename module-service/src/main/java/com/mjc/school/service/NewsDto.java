@@ -1,7 +1,7 @@
 package com.mjc.school.service;
 
-import com.mjc.school.repository.implementation.DataSourceError;
-import com.mjc.school.repository.implementation.DataSourceIdGenerator;
+import com.mjc.school.repository.implementation.Error;
+import com.mjc.school.repository.implementation.IdGenerator;
 import lombok.Data;
 
 import java.time.LocalDateTime;
@@ -16,8 +16,8 @@ public class NewsDto {
     private Long authorId;
 
     public NewsDto(String title, String content, Long authorId) {
-        if (DataSourceError.isNewsAttributesCorrect(title, content)) return;
-        this.id = DataSourceIdGenerator.getNewsGeneratedId();
+        if (Error.isNewsAttributesCorrect(title, content)) return;
+        this.id = IdGenerator.getNewsGeneratedId();
         this.title = title;
         this.content = content;
         this.createDate = LocalDateTime.now();

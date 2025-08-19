@@ -5,7 +5,7 @@ import java.time.LocalDateTime;
 import lombok.Data;
 
 @Data
-public class DataSourceModel {
+public class News {
 
     private Long id;
     private String title;
@@ -14,9 +14,9 @@ public class DataSourceModel {
     private LocalDateTime lastUpdateDate;
     private Long authorId;
 
-    public DataSourceModel(String title, String content, Long authorId) {
-        if (DataSourceError.isNewsAttributesCorrect(title, content)) return;
-        this.id = DataSourceIdGenerator.getNewsGeneratedId();
+    public News(String title, String content, Long authorId) {
+        if (Error.isNewsAttributesCorrect(title, content)) return;
+        this.id = IdGenerator.getNewsGeneratedId();
         this.title = title;
         this.content = content;
         this.createDate = LocalDateTime.now();
@@ -24,8 +24,8 @@ public class DataSourceModel {
         this.authorId = authorId;
     }
 
-    public DataSourceModel(String title, String content, LocalDateTime createDate, LocalDateTime lastUpdateDate, Long authorId) {
-        this.id = DataSourceIdGenerator.getNewsGeneratedId();
+    public News(String title, String content, LocalDateTime createDate, LocalDateTime lastUpdateDate, Long authorId) {
+        this.id = IdGenerator.getNewsGeneratedId();
         this.title = title;
         this.content = content;
         this.createDate = createDate;

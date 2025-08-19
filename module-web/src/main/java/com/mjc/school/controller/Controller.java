@@ -31,14 +31,14 @@ public class Controller {
             }
 
             if(command.equals("1")) {
-                System.out.println("Operation: Get all dataSourceModel.");
+                System.out.println("Operation: Get all news.");
                 newsDtoStore.printAllNewsDto();
             }
 
             if(command.equals("2")) {
                 System.out.println("""
-                        Operation: Get dataSourceModel by id.
-                        Enter dataSourceModel id:
+                        Operation: Get news by id.
+                        Enter news id:
                         """);
                 String id = scan.nextLine();
                 try{
@@ -58,12 +58,12 @@ public class Controller {
             if(command.equals("3")) {
                 while(true) {
                     System.out.println("""
-                        Operation: Create dataSourceModel.
-                        Enter dataSourceModel title:
+                        Operation: Create news.
+                        Enter news title:
                         """);
                     String title = scan.nextLine();
 
-                    System.out.println("Enter dataSourceModel content:");
+                    System.out.println("Enter news content:");
                     String content = scan.nextLine();
 
                     System.out.println("Enter author id:");
@@ -92,8 +92,8 @@ public class Controller {
                     String newsId;
                     while(longNewsId==null) {
                         System.out.println("""
-                        Operation: Update dataSourceModel.
-                        Enter dataSourceModel id:
+                        Operation: Update news.
+                        Enter news id:
                         """);
                         newsId = scan.nextLine();
                         try{
@@ -102,10 +102,10 @@ public class Controller {
                             newsDtoStore.newsIdNotNumber();
                         }
                     }
-                    System.out.println("Enter dataSourceModel title:");
+                    System.out.println("Enter news title:");
                     String title = scan.nextLine();
 
-                    System.out.println("Enter dataSourceModel content:");
+                    System.out.println("Enter news content:");
                     String content = scan.nextLine();
 
                     System.out.println("Enter author id:");
@@ -139,8 +139,8 @@ public class Controller {
 
             if(command.equals("5")) {
                 System.out.println("""
-                        Operation: Remove dataSourceModel by id.
-                        Enter dataSourceModel id:
+                        Operation: Remove news by id.
+                        Enter news id:
                         """);
                 String newsId = scan.nextLine();
 
@@ -162,11 +162,11 @@ public class Controller {
     public void console(){
         System.out.println("""
                 Enter the number of operation:
-                1 - Get all dataSourceModel.
-                2 - Get dataSourceModel by id.
-                3 - Create dataSourceModel.
-                4 - Update dataSourceModel.
-                5 - Remove dataSourceModel by id.
+                1 - Get all news.
+                2 - Get news by id.
+                3 - Create news.
+                4 - Update news.
+                5 - Remove news by id.
                 0 - Exit.
                 """);
     }

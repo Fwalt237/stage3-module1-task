@@ -1,6 +1,6 @@
 package com.mjc.school.service;
 
-import com.mjc.school.repository.implementation.DataSourceError;
+import com.mjc.school.repository.implementation.Error;
 import com.mjc.school.repository.implementation.DataSource;
 import lombok.Getter;
 
@@ -48,16 +48,16 @@ public class NewsDtoStorage {
     }
 
     public void newsIdNotNumber() {
-        DataSourceError.newsIdNotNumber();
+        Error.newsIdNotNumber();
     }
     public void newsIdNotFound(Long id) {
-        DataSourceError.newsIdNotFound(id);
+        Error.newsIdNotFound(id);
     }
     public void authorIdNotNumber(){
-        DataSourceError.authorIdNotNumber();
+        Error.authorIdNotNumber();
     }
     public void authorIdNotFound(Long authorId) {
-        DataSourceError.authorIdNotFound(authorId);
+        Error.authorIdNotFound(authorId);
     }
 
     public void createNewsDto(NewsDto newsDto){
