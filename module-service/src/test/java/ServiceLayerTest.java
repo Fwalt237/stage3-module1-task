@@ -41,9 +41,9 @@ class ServiceLayerTest {
     @Test
     void testCreateNewsDto_AddsAndPrints() {
         NewsDto newNews = new NewsDto("Test Title", "Test Content", 1L);
-        int beforeSize = newsDtoStorage.getNewsDtoStore().size();
+        int beforeSize = newsDtoStorage.getAllNewsDto().size();
         newsDtoStorage.createNewsDto(newNews);
-        int afterSize = newsDtoStorage.getNewsDtoStore().size();
+        int afterSize = newsDtoStorage.getAllNewsDto().size();
 
         assertEquals(beforeSize + 1, afterSize);
         assertTrue(outContent.toString().contains("Test Title"));
@@ -51,7 +51,7 @@ class ServiceLayerTest {
 
     @Test
     void testUpdateNewsDto_UpdatesExisting() {
-        NewsDto existing = newsDtoStorage.getNewsDtoStore().get(0);
+        NewsDto existing = newsDtoStorage.getAllNewsDto().get(0);
         Long id = existing.getId();
 
         NewsDto updatedDto = new NewsDto("Updated Title", "Updated Content", existing.getAuthorId());
@@ -65,7 +65,7 @@ class ServiceLayerTest {
 
     @Test
     void testDeleteNewsDtoById_Removes() {
-        NewsDto existing = newsDtoStorage.getNewsDtoStore().get(0);
+        NewsDto existing = newsDtoStorage.getAllNewsDto().get(0);
         Long id = existing.getId();
         newsDtoStorage.deleteNewsDtoById(id);
         assertFalse(newsDtoStorage.isNewsIdExist(id));

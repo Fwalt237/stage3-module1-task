@@ -14,16 +14,6 @@ public class DataSourceModel {
     private LocalDateTime lastUpdateDate;
     private Long authorId;
 
-    public DataSourceModel(String title, String content, Long authorId) {
-        if (Error.isNewsAttributesCorrect(title, content)) return;
-        this.id = IdGenerator.getNewsGeneratedId();
-        this.title = title;
-        this.content = content;
-        this.createDate = LocalDateTime.now();
-        this.lastUpdateDate = LocalDateTime.now();
-        this.authorId = authorId;
-    }
-
     public DataSourceModel(String title, String content, LocalDateTime createDate, LocalDateTime lastUpdateDate, Long authorId) {
         this.id = IdGenerator.getNewsGeneratedId();
         this.title = title;
@@ -32,6 +22,8 @@ public class DataSourceModel {
         this.lastUpdateDate = lastUpdateDate;
         this.authorId = authorId;
     }
+
+    public DataSourceModel(){}
 
 }
 

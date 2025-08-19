@@ -6,7 +6,7 @@ import java.time.LocalDateTime;
 import java.util.*;
 
 public class DataSource {
-    private List<DataSourceModel> datasource;
+    private final List<DataSourceModel> datasource;
 
     public DataSource(){
         datasource = new ArrayList<>();
@@ -26,6 +26,8 @@ public class DataSource {
         }
     }
 
+    public List<DataSourceModel> readAllNews(){return datasource;}
+
     public DataSourceModel createNews(DataSourceModel dataSourceModel){
         datasource.add(dataSourceModel);
         return dataSourceModel;
@@ -43,7 +45,6 @@ public class DataSource {
                 dataSourceModelToUpdate.setContent(dataSourceModel.getContent());
                 dataSourceModelToUpdate.setAuthorId(dataSourceModel.getAuthorId());
                 dataSourceModelToUpdate.setLastUpdateDate(LocalDateTime.now());
-                System.out.println(dataSourceModelToUpdate);
                 return dataSourceModelToUpdate;
             }
         }
@@ -51,9 +52,7 @@ public class DataSource {
     }
 
     public Boolean deleteNewsById(Long newsId){
-        return datasource.removeIf(dataSourceModelDto -> dataSourceModelDto.getId().equals(newsId));
+        return datasource.removeIf(dataSourceModel -> dataSourceModel.getId().equals(newsId));
     }
 
-
-    public List<DataSourceModel> readAllNews(){return datasource;}
 }

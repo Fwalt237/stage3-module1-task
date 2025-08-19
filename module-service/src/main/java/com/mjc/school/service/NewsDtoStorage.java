@@ -1,50 +1,42 @@
 package com.mjc.school.service;
 
+import com.mjc.school.repository.implementation.DataSourceModel;
 import com.mjc.school.repository.implementation.Error;
 import com.mjc.school.repository.implementation.DataSource;
 import lombok.Getter;
-
-import java.time.LocalDateTime;
 import java.util.List;
-import java.util.Optional;
+
 
 public class NewsDtoStorage {
     @Getter
-    private List<NewsDto> newsDtoStore;
-    NewsMapper mapper = NewsMapper.INSTANCE;
+    private final DataSource dataSource;
+    private final NewsMapper mapper ;
 
     public NewsDtoStorage(){
-        DataSource dataSource = new DataSource();
-        newsDtoStore = mapper.toDtoList(dataSource.readAllNews());
+        dataSource = new DataSource();
+        mapper = NewsMapper.INSTANCE;
+    }
+
+    public List<NewsDto> getAllNewsDto() {
+        return mapper.toDtoList(dataSource.readAllNews());
     }
 
     public void printAllNewsDto() {
-        for(NewsDto newsDto : newsDtoStore){
+        for(NewsDto newsDto : this.getAllNewsDto()) {
             System.out.println(newsDto);
         }
     }
 
     public NewsDto getNewsDtoById(Long id){
-        Optional<NewsDto> newsDtoOptional = newsDtoStore.stream().filter(n -> n.getId().equals(id)).findFirst();
-        return newsDtoOptional.orElse(null);
+        return mapper.toDto(dataSource.readById(id));
     }
 
     public boolean isAuthorIdExist(Long authorId){
-        for(NewsDto newsDto : newsDtoStore){
-            if(newsDto.getAuthorId().equals(authorId)){
-                return true;
-            }
-        }
-        return false;
+        return this.getAllNewsDto().stream().anyMatch(dto -> dto.getAuthorId().equals(authorId));
     }
 
     public boolean isNewsIdExist(Long newsId){
-        for(NewsDto newsDto : newsDtoStore){
-            if(newsDto.getId().equals(newsId)){
-                return true;
-            }
-        }
-        return false;
+        return this.getAllNewsDto().stream().anyMatch(dto -> dto.getId().equals(newsId));
     }
 
     public void newsIdNotNumber() {
@@ -62,27 +54,19 @@ public class NewsDtoStorage {
 
     public void createNewsDto(NewsDto newsDto){
         if(newsDto!=null) {
-            this.newsDtoStore.add(newsDto);
-            System.out.println(newsDto);
+            DataSourceModel dataSourceModel = dataSource.createNews(mapper.toDataSourceModel(newsDto));
+            System.out.println(mapper.toDto(dataSourceModel));
         }
     }
 
     public void updateNewsDto(NewsDto newsDto){
         if(newsDto!=null) {
-            for(NewsDto newDtoToUpdate : newsDtoStore){
-                if(newDtoToUpdate.getId().equals(newsDto.getId())) {
-                    newDtoToUpdate.setTitle(newsDto.getTitle());
-                    newDtoToUpdate.setContent(newsDto.getContent());
-                    newDtoToUpdate.setAuthorId(newsDto.getAuthorId());
-                    newDtoToUpdate.setLastUpdateDate(LocalDateTime.now());
-                    System.out.println(newDtoToUpdate);
-                    return;
-                }
-            }
+            DataSourceModel dataSourceModel = dataSource.updateNews(mapper.toDataSourceModel(newsDto));
+            System.out.println(mapper.toDto(dataSourceModel));
         }
     }
 
-    public void deleteNewsDtoById(Long newsId){
-        newsDtoStore.removeIf(newsDto -> newsDto.getId().equals(newsId));
+    public Boolean deleteNewsDtoById(Long newsId){
+        return dataSource.deleteNewsById(newsId);
     }
 }

@@ -9,8 +9,8 @@ import com.mjc.school.service.NewsDtoStorage;
 
 public class Controller {
 
-    private Scanner scan;
-    private NewsDtoStorage newsDtoStore;
+    private final Scanner scan;
+    private final NewsDtoStorage newsDtoStore;
 
     public Controller(Scanner scanner) {
         scan = scanner;
@@ -147,8 +147,7 @@ public class Controller {
                 try{
                     Long longNewsId = Long.parseLong(newsId);
                     if(newsDtoStore.isNewsIdExist(longNewsId)) {
-                        System.out.println("true");
-                        newsDtoStore.deleteNewsDtoById(longNewsId);
+                        System.out.println(newsDtoStore.deleteNewsDtoById(longNewsId));
                     }else{
                         newsDtoStore.newsIdNotFound(longNewsId);
                     }

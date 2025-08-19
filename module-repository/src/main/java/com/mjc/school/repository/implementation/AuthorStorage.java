@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class AuthorStorage {
-    private List<Author> authors;
+    private final List<Author> authors;
 
     public AuthorStorage() {
         this.authors = new ArrayList<>();

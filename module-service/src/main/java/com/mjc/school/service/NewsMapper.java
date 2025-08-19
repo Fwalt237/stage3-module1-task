@@ -10,4 +10,8 @@ import java.util.List;
 public interface NewsMapper {
     NewsMapper INSTANCE = Mappers.getMapper(NewsMapper.class);
     List<NewsDto> toDtoList(List<DataSourceModel> dataSourceModelList);
+
+    NewsDto toDto(DataSourceModel dataSourceModel);
+
+    DataSourceModel toDataSourceModel(NewsDto newsDto);
 }
